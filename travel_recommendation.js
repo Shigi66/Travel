@@ -52,14 +52,14 @@ function buscar() {
      // resultados
       if (resultados.length > 0) {
       resultados.forEach(item => {
-      const resultItem = document.createElement("div"); 
+      const resultItem = document.createElement("div");
+      resultItem.classList.add("card");  // Aquí agregamos la clase "card"
       resultItem.innerHTML = `
-      <strong>${item.name}</strong><br>
-       <p>${item.description}</p>
-       <img src="img/${item.imageUrl}" alt="${item.name}" class="result-image">
-      `;
- 
-        resultsContainer.appendChild(resultItem);
+      <img src="img/${item.imageUrl}" alt="${item.name}" class="result-image">
+      <h3>${item.name}</h3>
+     <p>${item.description}</p>
+    `;
+      resultsContainer.appendChild(resultItem);
     });
         } else {
         resultsContainer.innerHTML = "<p>No se encontraron resultados.</p>";
